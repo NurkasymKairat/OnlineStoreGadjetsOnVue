@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 73.125rem;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  width: 15;
+  height: 3.5rem;
+  background: #eb2d66;
+  box-shadow: 0px 7px 35px rgba(235, 45, 102, 0.35);
+}
+
+.swiper {
+  width: 80%;
+  height: fit-content;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+
+@import "./base/variable";
+
+@import "./navbar";
+@import "./intro";
+@import "./slider";
+@import "./blank";
+@import "./product";
+@import "./about";
+@import "./footer";
+@import "./policy";
+
+
+
+@import './base/media';

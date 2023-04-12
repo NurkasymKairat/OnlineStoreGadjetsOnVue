@@ -1,0 +1,38 @@
+.about {
+  padding-bottom: 3rem;
+  &_wrapper {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &_title {
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: $colorBlack;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+  }
+
+  &_num {
+    font-weight: 900;
+    font-size: 3rem;
+    color: $colorBlack;
+    margin-right: 1rem;
+  }
+
+  &_text {
+    font-weight: 400;
+    font-size: 1rem;
+    color: $colorBlack;
+    line-height: 1.2;
+    span {
+        font-size: 0.6rem;
+    }
+  }
+}

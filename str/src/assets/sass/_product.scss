@@ -1,0 +1,39 @@
+.products {
+  padding: 1rem 0 3rem 0;
+  &_info {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+  }
+  &_title {
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+
+  &_tabs {
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a {
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: $color;
+      color: $colorBlack;
+      padding: 0.5rem;
+      border-radius: 0.2rem;
+      font-weight: 700;
+      transition: 0.2s linear;
+      &:active,
+      &:hover {
+        background-color: $colorBlack;
+        color: $color;
+      }
+    }
+    .products_acitve {
+      background-color: $colorBlack;
+      color: $color;
+    }
+  }
+}

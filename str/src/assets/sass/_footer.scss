@@ -1,0 +1,68 @@
+.footer {
+    width: 100%;
+    padding: 5rem 0;
+    background-color: #343A62;
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    &_social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: $color;
+        }
+        a {
+            transition: 0.2s all;
+            font-size: 1.2rem;
+            color: $color;
+            &:hover {
+                color: $colorR;
+            }
+        }
+    }
+
+    &_info {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: $color;
+        }
+    }
+
+    &_adress {
+        cursor: pointer;
+        transition: 0.2s all;
+        font-size: 1.2rem;
+        color: $color;
+        &:hover {
+            color: $colorR;
+        }
+    }
+
+    &_copyright {
+        span {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: $color;
+        }
+        a {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: $color;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

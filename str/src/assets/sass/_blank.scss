@@ -1,0 +1,60 @@
+.blank {
+  padding: 5rem 0;
+  &_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &_item {
+    position: relative;
+    text-align: start;
+    width: 570px;
+    height: 425px;
+    background: url("@/assets/img/manDrones.png") center center / cover no-repeat;
+  }
+
+  &_item_2 {
+    position: relative;
+    width: 570px;
+    height: 425px;
+    background: url("@/assets/img/manusesIpad.png") center center / cover no-repeat;
+  }
+
+  &_title {
+    color: $color;
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &_subtitle {
+    color: $color;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  &_info {
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    &::before {
+      content: "";
+      top: -3rem;
+      left: -1rem;
+      position: absolute;
+      width: 23px;
+      height: 23px;
+      background-color: $color;
+    }
+
+    &::after {
+        content: "*"; 
+        font-size: 3rem;
+        color: $color;
+        position: absolute;
+        top: -10rem;
+        right: -20%;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.policy {
+    padding: 3rem 0;
+    &_title {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: $colorBlack;
+    }
+    &_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+    }
+
+    &_back {
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: $colorBlack;
+        }
+    }
+}

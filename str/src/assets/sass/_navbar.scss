@@ -1,0 +1,141 @@
+.header {
+  height: 5rem;
+  padding: 1.2rem 0;
+  background-color: $color;
+  z-index: 100;
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_loga {
+    img {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &_nav {
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+      a {
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 1rem;
+        text-align: center;
+        color: $colorBlack;
+        text-decoration: none;
+        transition: 0.2s all;
+        position: relative;
+        transition: 0.3s linear;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0%;
+          top: 110%;
+          left: 0;
+          height: 1px;
+          background-color: $colorBlue;
+          transition: 0.3s linear;
+        }
+        &:hover {
+          color: $colorBlue;
+        }
+        &:hover:after {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  &_tel {
+    a {
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      color: $colorBlack;
+      &:hover {
+        color: #534b4b;
+      }
+    }
+  }
+
+  &_btn {
+    button {
+      font-weight: 700;
+      font-size: 11px;
+      background-color: rgba(255, 255, 255, 0);
+      outline: none;
+      border: 1px solid $colorR;
+      color: $colorR;
+      padding: 10px;
+      cursor: pointer;
+      transition: all 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+      &:hover {
+        background-color: $colorR;
+        color: $color;
+      }
+    }
+  }
+}
+
+.modal {
+  &__content {
+    position: relative;
+    width: 100%;
+    padding-top: 2rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    max-width: 30rem;
+    overflow-y: auto;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  &__close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-size: 30px;
+    color: #000;
+    opacity: 0.5;
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &__title {
+    text-align: center;
+    font-size: 22px;
+    text-transform: uppercase;
+  }
+  &__input {
+    display: block;
+    margin: 20px auto 20px auto;
+    width: 280px;
+    height: 50px;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-size: 18px;
+    text-align: center;
+    padding: 0 20px;
+    outline: none;
+  }
+  &_btn {
+    background: #eb2d66;
+    box-shadow: 0px 7px 35px rgba(235, 45, 102, 0.35);
+    font-weight: 700;
+    font-size: 15px;
+    color: $color;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 500ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    &:hover {
+      background: #a9274e;
+    }
+  }
+}

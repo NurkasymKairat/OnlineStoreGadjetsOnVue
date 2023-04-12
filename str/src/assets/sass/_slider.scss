@@ -1,0 +1,12 @@
+.slider {
+  &_title {
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: $colorBlack;
+  }
+  &_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
