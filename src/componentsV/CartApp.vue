@@ -1,18 +1,28 @@
 <template>
-  <div class="cart">
-    <div class="cart_wrapper">
-      <a href="#" class="cart_icon">
+  <div class="carter">
+    <div class="carter_wrapper">
+      <router-link :to="{ name: 'cart' }" href="#" class="carter_icon">
         <font-awesome-icon icon="fa-solid fa-cart-shopping" />
-      </a>
-      <div class="cart_price">4665 тенге.<span>2</span></div>
+      </router-link>
+      <div class="carter_price">
+        4665 тенге.<span>{{ totalCart }}</span>
+      </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    ...mapGetters("cart", ["allProduct"]),
+    totalCart() {
+      return this.allProduct.length;
+    },
+  },
+};
 </script>
 <style lang="scss">
-.cart {
+.carter {
   z-index: 30;
   &_wrapper {
     display: flex;

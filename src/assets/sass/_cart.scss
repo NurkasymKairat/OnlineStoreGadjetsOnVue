@@ -1,0 +1,248 @@
+.cart {
+  padding: 1rem 0;
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  &_block {
+    text-align: left;
+  }
+
+  &_img {
+    img {
+      width: 50%;
+    }
+  }
+
+  &_text {
+    border-bottom: 1.5px solid #d0cfcf;
+    margin-bottom: 2rem;
+  }
+
+  &_title {
+    font-size: 1.1rem;
+    color: $colorBlack;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  &_subtitle {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: $colorBlack;
+    line-height: 1.5;
+  }
+
+  &_sub {
+    font-weight: 400;
+    font-size: 1rem;
+    color: $colorBlack;
+    margin-bottom: 1rem;
+    span {
+      color: $colorR;
+    }
+  }
+
+  &_items {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    width: 608px;
+    height: 100px;
+    padding: 10px;
+    background-color: $color;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    &_title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    &_subtitle {
+      font-weight: 500;
+      font-size: 1rem;
+      color: $colorBlack;
+      
+    }
+
+    &_count {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      span {
+        font-weight: 900;
+        font-size: 1rem;
+      }
+    }
+
+    &_wrapper {
+      display: flex;
+
+    }
+
+    &_counters {
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    &_price {
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    &_delete {
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-right: 1rem;
+    }
+  }
+
+  &_info {
+    padding-right: 1.2rem;
+  }
+
+  &_card {
+    width: 388px;
+    height: 644px;
+    background-color: #565abb;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    &_title {
+      font-weight: 600;
+      font-size: 22px;
+      color: $color;
+      margin-bottom: 1.2rem;
+    }
+
+    &_subtitle {
+      font-weight: 500;
+      font-size: 1rem;
+      color: $color;
+    }
+
+    &_social {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &_item {
+      cursor: pointer;
+      width: 75px;
+      height: 55px;
+      background-color: #8587c6;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      &:nth-child(1) {
+        color: #103a75;
+      }
+      &:nth-child(2) {
+        color: #f9c21d;
+      }
+      &:nth-child(3) {
+        color: #1d3ef9;
+      }
+      &:nth-child(4) {
+        color: #8bc0d4;
+      }
+    }
+  }
+
+  &_pay {
+    margin-top: 1.5rem;
+    &_item {
+      margin-bottom: 1rem;
+      input {
+        width: 350px;
+        background-color: #6268c6;
+        outline: none;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 1rem;
+        color: $color;
+        padding: 1rem;
+      }
+    }
+    &_title {
+      font-weight: 500;
+      color: $color;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &_info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid #d0cfcf;
+
+      input {
+        margin-bottom: 1rem;
+        width: 150px;
+        background-color: #6268c6;
+        outline: none;
+        border: none;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 1rem;
+        color: $color;
+        padding: 1rem;
+      }
+    }
+  }
+
+  &_check {
+    margin: 1.5rem 0;
+
+    &_text {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 1rem;
+      color: $color;
+      margin-bottom: 1.2rem;
+    }
+
+    &_btn {
+      margin: 0 auto;
+      button {
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin-top: 4rem;
+        font-weight: 600;
+        font-size: 1rem;
+        color: $color;
+        margin-bottom: 1.2rem;
+        padding: 1.5rem;
+        background-color: #4de1c1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 12px;
+        transition: 0.2s all;
+        &:active,
+        &:hover {
+          background-color: #3ca18c;
+        }
+      }
+    }
+  }
+}

@@ -13,13 +13,12 @@
           class="header_nav"
         >
           <nav class="nav">
-            
-            <a href="#">Телефоны</a>
-            <a href="#">Планшеты</a>
-            <a href="#">Часы</a>
-            <a href="#">Дроны</a>
+            <a href="#" @click="closeBurgers">Телефоны</a>
+            <a href="#" @click="closeBurgers">Планшеты</a>
+            <a href="#" @click="closeBurgers">Часы</a>
+            <a href="#" @click="closeBurgers">Дроны</a>
             <a  @click="dialog = true" v-show="burgers" >Заказать звонок</a>
-            <a>Корзина</a>
+            <router-link @click="closeBurgers" :to="{name: 'cart'}" v-show="burgers">Корзина</router-link>
           </nav>
         </div>
         <div class="header_tel">
@@ -91,7 +90,8 @@ export default {
     ...mapGetters(["burgers", "tellCall"]),
   },
   methods: {
-    ...mapMutations(["openBurgers"]),
+    ...mapMutations(["openBurgers", "closeBurgers"]),
+
   },
 };
 </script>

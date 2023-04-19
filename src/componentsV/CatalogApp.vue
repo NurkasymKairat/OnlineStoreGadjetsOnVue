@@ -1,7 +1,7 @@
 <template>
   <div class="catalog">
     <div class="catalog_wrapper">
-      <transition-group name="list">
+
       <div
         v-for="item in product"
         :style="{ marginRight: styles }"
@@ -29,12 +29,13 @@
         </div>
         <div class="catalog_next">
           <div class="catalog_price">{{ item.price }}</div>
-          <router-link :to="`/product/${item.id}`" class="catalog_arrow">
+          <slot></slot>
+          <router-link v-show="links" :to="`/product/${item.id}`" class="catalog_arrow">
             <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </router-link>
         </div>
       </div>
-    </transition-group>
+
     </div>
   </div>
 </template>
@@ -44,6 +45,11 @@ export default {
   props: {
     product: Array,
     styles: String,
+    links: {
+      type: Boolean,
+      default: true,
+      required: true,
+    }
   },
   data() {
     return {};

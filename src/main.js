@@ -28,14 +28,17 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import {
+  faAngleLeft,
+  faAngleRight,
   faArrowLeft,
   faArrowRight,
   faCartShopping,
   faEnvelope,
   faMapLocationDot,
+  faTrashCan,
   faUserSecret,
 } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faTelegram, faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { faCcMastercard, faCcPaypal, faCcVisa, faGooglePay, faInstagram, faTelegram, faTiktok } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faTelegram,
@@ -45,7 +48,14 @@ library.add(
   faMapLocationDot,
   faInstagram,
   faTiktok,
-  faEnvelope
+  faEnvelope,
+  faAngleRight,
+  faAngleLeft,
+  faTrashCan,
+  faCcPaypal,
+  faCcMastercard,
+  faCcVisa,
+  faGooglePay,
 );
 
 import "./assets/sass/style.scss";

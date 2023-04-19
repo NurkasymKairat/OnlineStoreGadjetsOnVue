@@ -10,7 +10,7 @@ export const AllProducts = {
         battery: "lition",
         size: "5.2",
         img: "/src/assets/img/catalog/phones/ip13.png",
-        price: "550.000тг",
+        price: "550000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
       },
       {
@@ -22,7 +22,7 @@ export const AllProducts = {
         battery: "lition",
         size: "4.9",
         img: "/src/assets/img/catalog/phones/ip11.png",
-        price: "300.000тг",
+        price: "300000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
       },
       {
@@ -34,7 +34,7 @@ export const AllProducts = {
         battery: "lition",
         size: "5.1",
         img: "/src/assets/img/catalog/phones/ip12.png",
-        price: "360.000тг",
+        price: "360000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
       },
 
@@ -47,7 +47,7 @@ export const AllProducts = {
         battery: "lition",
         size: "4.7",
         img: "/src/assets/img/catalog/phones/ipx.png",
-        price: "220.000тг",
+        price: "220000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
       },
       {
@@ -59,7 +59,7 @@ export const AllProducts = {
         battery: "lition",
         size: "5.2",
         img: "/src/assets/img/catalog/phones/ip14.png",
-        price: "650.000тг",
+        price: "650000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
       },
 
@@ -72,7 +72,7 @@ export const AllProducts = {
         battery: "25мин",
         size: "Full hd / 60fps",
         img: "/src/assets/img/catalog/drones/mv1.png",
-        price: "350.000тг",
+        price: "350000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
       },
       {
@@ -84,7 +84,7 @@ export const AllProducts = {
         battery: "30мин",
         size: "4k / 60fps",
         img: "/src/assets/img/catalog/drones/mv2.png",
-        price: "540.000тг",
+        price: "540000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
       },
       {
@@ -96,7 +96,7 @@ export const AllProducts = {
         battery: "35мин",
         size: "4k / 120fps",
         img: "/src/assets/img/catalog/drones/mv3.png",
-        price: "820.000тг",
+        price: "820000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
       },
       {
@@ -108,7 +108,7 @@ export const AllProducts = {
         battery: "30мин",
         size: "2k / 60fps",
         img: "/src/assets/img/catalog/drones/mvair.png",
-        price: "310.000тг",
+        price: "310000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
       },
 
@@ -121,7 +121,7 @@ export const AllProducts = {
         battery: "M1",
         size: "256gb",
         img: "/src/assets/img/catalog/ipads/ipadair2022.png",
-        price: "370.000тг",
+        price: "370000тг",
         option: ["Корпус", "Памят", "Цвет", "Процессор", "Экран"],
       },
       {
@@ -133,7 +133,7 @@ export const AllProducts = {
         battery: "M1",
         size: "256gb",
         img: "/src/assets/img/catalog/ipads/ipadpro2022.png",
-        price: "720.000тг",
+        price: "720000тг",
         option: ["Корпус", "Памят", "Цвет", "Процессор", "Экран"],
       },
       {
@@ -145,7 +145,7 @@ export const AllProducts = {
         battery: "A12 Bionic",
         size: "128gb",
         img: "/src/assets/img/catalog/ipads/ipadpro2020.png",
-        price: "420.000тг",
+        price: "420000тг",
         option: ["Корпус", "Памят", "Цвет", "Процессор", "Экран"],
       },
 
@@ -158,7 +158,7 @@ export const AllProducts = {
         battery: "180 мАч",
         size: "40 мм",
         img: "/src/assets/img/catalog/watches/wh5.png",
-        price: "220.000тг",
+        price: "220000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
       },
       {
@@ -170,7 +170,7 @@ export const AllProducts = {
         battery: "200 мАч",
         size: "41 мм",
         img: "/src/assets/img/catalog/watches/wh7.png",
-        price: "250.000тг",
+        price: "250000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
       },
       {
@@ -182,7 +182,7 @@ export const AllProducts = {
         battery: "284 мАч",
         size: "41 мм",
         img: "/src/assets/img/catalog/watches/wh8.png",
-        price: "300.000тг",
+        price: "300000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
       },
       {
@@ -194,7 +194,7 @@ export const AllProducts = {
         battery: "542 мАч",
         size: "49 мм",
         img: "/src/assets/img/catalog/watches/whultra.png",
-        price: "490.000тг",
+        price: "490000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
       },
     ],
