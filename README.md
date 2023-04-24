@@ -10,26 +10,7 @@
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
 
-```sh
-npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Photo
+![ScreenShot](https://user-images.githubusercontent.com/111134739/234009962-78b4fd86-26fa-4607-bb14-fdc5e4aaae26.png)
