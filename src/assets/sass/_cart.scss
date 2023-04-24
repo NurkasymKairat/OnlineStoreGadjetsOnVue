@@ -48,12 +48,14 @@
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &_item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 1rem;
     width: 608px;
     height: 100px;
@@ -64,6 +66,7 @@
       font-weight: 700;
       font-size: 1.2rem;
       margin-bottom: 0.8rem;
+      max-width: 150px;
     }
     &_subtitle {
       font-weight: 500;

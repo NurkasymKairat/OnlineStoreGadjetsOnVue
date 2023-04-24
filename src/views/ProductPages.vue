@@ -12,22 +12,26 @@
           <div class="product_img">
             <img :src="productImg" alt="" />
           </div>
-
+          {{ productTotal }}
           <div class="product_info">
             <div class="product_price">{{ productPrice }}</div>
             <button @click="decreaseTotal">
               <font-awesome-icon icon="fa-solid fa-angle-left" />
             </button>
-            <input type="number" @input="limitValue" v-model="total" />
+            <input type="number" @input="limitValue" v-model="productTotals" />
             <button @click="increaseTotal">
               <font-awesome-icon icon="fa-solid fa-angle-right" />
             </button>
           </div>
           <div class="product_descr">Бесплатная доставка в Алмату</div>
-          <button @click="addProductCart(products)" class="product_cart">
+          <button
+            v-if="btnTrue"
+            @click="addProductCart(products)"
+            class="product_cart"
+          >
             Добавить в корзину
           </button>
-          <button @click="handleDelete(productId)" class="product_cart">
+          <button v-else @click="handleDelete(productId)" class="product_cart">
             Удалить из корзины
           </button>
         </div>
@@ -45,6 +49,7 @@ export default {
   data() {
     return {
       link: false,
+      num: 1,
     };
   },
   watch: {},
@@ -58,10 +63,21 @@ export default {
     products() {
       return this.item.filter((item) => item.id == this.id);
     },
+    btnTrue() {
+      const inCart = this.allProduct.some((subarray) =>
+        subarray.some((product) => product.id === this.productId)
+      );
+      return !inCart;
+    },
     productId() {
       const product = this.item.find((item) => item.id == this.id);
       return product ? product.id : "";
     },
+    productTotals() {
+      const product = this.item.find((item) => item.id == this.id);
+      return product ? product.totals : null;
+    },
+
     productTitle() {
       const product = this.item.find((item) => item.id == this.id);
       return product ? product.name : "";
@@ -78,7 +94,7 @@ export default {
       const filteredProducts = this.allProduct.flat();
       return console.log(filteredProducts);
     },
-    ...mapGetters("product", ["total"]),
+
     ...mapGetters("cart", ["allProduct", "btnCart"]),
   },
   methods: {
@@ -87,26 +103,43 @@ export default {
       if (input.value > 5) {
         input.value = 5;
       }
-      console.log(this.products);
+      const newTotals = Number(input.value);
+      this.updateTotals({ productId: this.productId, newTotals });
+    },
+    btnVisible() {
+      const inCart = this.allProduct.some((subarray) =>
+        subarray.some((product) => product.id === this.productId)
+      );
+
+      this.btnCart = !inCart;
     },
 
-    ...mapActions("product", ["increaseTotal", "decreaseTotal"]),
-    ...mapActions("cart", ["addProductCart", "handleDelete"]),
+    increaseTotal() {
+      const newTotals = this.productTotals + 1;
+      if (newTotals > 5) {
+        return;
+      }
+      this.updateTotals({ productId: this.productId, newTotals });
+    },
+    decreaseTotal() {
+      const newTotals = this.productTotals - 1;
+      if (newTotals < 1) {
+        return;
+      }
+      this.updateTotals({ productId: this.productId, newTotals });
+    },
+
+    ...mapMutations("AllProducts", ["updateTotals"]),
+    ...mapActions("cart", ["addProductCart", "handleDelete", "setAllProduct"]),
   },
-  //   watch: {
-  //   allProduct(newValue, oldValue) {
-  //     console.log('allProduct changed!', newValue, oldValue);
-  //     localStorage.setItem("AllProduct", JSON.stringify(this.allProduct));
-  //   }
-  // },
-  created() {
-    // const dataProduct = localStorage.getItem("AllProduct");
 
-    // if(dataProduct) {
-    //   this.allProduct = JSON.parse(dataProduct);
-    // }
-
-  }
+  created() {},
+  mounted() {
+    if (localStorage.getItem("allProduct")) {
+      const allProduct = JSON.parse(localStorage.getItem("allProduct"));
+      this.setAllProduct(allProduct);
+    }
+  },
 };
 </script>
 <style lang="scss">
@@ -118,6 +151,7 @@ export default {
 
   &_card {
     margin-top: 2rem;
+
     text-align: center;
     width: 20rem;
     background-color: #fff;
@@ -185,9 +219,14 @@ export default {
   @media (max-width: 720px) {
     .product {
       &_wrapper {
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
+      }
+
+      &_card {
+        margin-bottom: 2rem;
+        margin-top: 0;
       }
     }
   }

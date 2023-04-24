@@ -26,7 +26,12 @@
           </div>
         </div>
         <div class="footer_copyright">
-          <span> <router-link :to="{name: 'policy'}">Политика Конфиденциальности.</router-link> © 2023</span>
+          <span>
+            <router-link :to="{ name: 'policy' }"
+              >Политика Конфиденциальности.</router-link
+            >
+            © 2023</span
+          >
         </div>
       </div>
     </div>

@@ -13,12 +13,25 @@
           class="header_nav"
         >
           <nav class="nav">
-            <a href="#" @click="closeBurgers">Телефоны</a>
-            <a href="#" @click="closeBurgers">Планшеты</a>
-            <a href="#" @click="closeBurgers">Часы</a>
-            <a href="#" @click="closeBurgers">Дроны</a>
-            <a  @click="dialog = true" v-show="burgers" >Заказать звонок</a>
-            <router-link @click="closeBurgers" :to="{name: 'cart'}" v-show="burgers">Корзина</router-link>
+            <router-link :to="{ name: 'phone' }" @click="closeBurgers"
+              >Телефоны</router-link
+            >
+            <router-link :to="{ name: 'ipad' }" @click="closeBurgers"
+              >Планшеты</router-link
+            >
+            <router-link :to="{ name: 'watch' }" @click="closeBurgers"
+              >Часы</router-link
+            >
+            <router-link :to="{ name: 'drone' }" href="#" @click="closeBurgers"
+              >Дроны</router-link
+            >
+            <a @click="dialog = true" v-show="burgers">Заказать звонок</a>
+            <router-link
+              @click="closeBurgers"
+              :to="{ name: 'cart' }"
+              v-show="burgers"
+              >Корзина</router-link
+            >
           </nav>
         </div>
         <div class="header_tel">
@@ -39,11 +52,17 @@
         </div>
       </div>
       <main class="modal">
-        <v-dialog transition="dialog-bottom-transition" v-model="dialog" width="auto">
+        <v-dialog
+          transition="dialog-bottom-transition"
+          v-model="dialog"
+          width="auto"
+        >
           <v-card>
             <div class="modal__content">
               <form action="#">
-                <div @click="dialog = false" data-close class="modal__close">&times;</div>
+                <div @click="dialog = false" data-close class="modal__close">
+                  &times;
+                </div>
                 <div class="modal__title">
                   Мы свяжемся с вами как можно быстрее!
                 </div>
@@ -62,10 +81,8 @@
                   class="modal__input"
                 />
                 <button class="modal_btn">Перезвоните мне</button>
-                
               </form>
             </div>
-    
           </v-card>
         </v-dialog>
       </main>
@@ -81,7 +98,7 @@ export default {
   data() {
     return {
       dialog: false,
-    }
+    };
   },
   components: {
     CartApp,
@@ -91,7 +108,6 @@ export default {
   },
   methods: {
     ...mapMutations(["openBurgers", "closeBurgers"]),
-
   },
 };
 </script>

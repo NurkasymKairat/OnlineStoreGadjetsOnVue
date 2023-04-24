@@ -14,9 +14,9 @@
             свежими <br />
             новинками digital-рынка.
           </div>
-          <div class="intro_btn">
+          <a href="#catalog" class="intro_btn">
             <button>Смотреть каталог</button>
-          </div>
+          </a>
         </div>
         <v-carousel cycle height="400" show-arrows hide-delimiter-background>
           <template v-slot:prev="{ props }">
@@ -62,18 +62,16 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex';
+import { mapGetters, mapState } from "vuex";
 
 export default {
   name: "IntroApp",
   data() {
-    return {
-
-    }
+    return {};
   },
   computed: {
-    ...mapGetters(['slides']),
-  }
+    ...mapGetters(["slides"]),
+  },
 };
 </script>
 

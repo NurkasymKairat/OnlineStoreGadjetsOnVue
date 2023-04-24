@@ -1,15 +1,12 @@
 export const cart = {
   namespaced: true,
   state: {
-    allTotal: 0,
-    allPrice: 0,
     allProduct: [],
     btnCart: true,
   },
   getters: {
     allProduct: (state) => state.allProduct,
     btnCart: (state) => state.btnCart,
-    allTotal: (state) => state.allTotal,
   },
   mutations: {
     addProductCart(state, item) {
@@ -32,21 +29,28 @@ export const cart = {
       localStorage.setItem("allProduct", JSON.stringify(state.allProduct));
     },
     handleDelete(state, id) {
-      state.allProduct = state.allProduct.filter(subarray => {
-        // удалить подмассив, если все его элементы не равны искомому id
-        return !subarray.every(product => product.id === id);
+      state.allProduct = state.allProduct.filter((subarray) => {
+        return !subarray.every((product) => product.id === id);
       });
       localStorage.setItem("allProduct", JSON.stringify(state.allProduct));
     },
-    deleteToCart(state, id) {
-      state.allProduct = state.allProduct.map((subarray) => {
-        if (subarray.some((t) => t === id)) {
-          return subarray.filter((t) => t !== id);
-        } else {
-          return subarray;
-        }
-      });
+    deleteToCart(state, index) {
+      state.allProduct = state.allProduct
+        .map((subarray) => {
+          if (subarray.indexOf(index) !== -1) {
+            return subarray.filter((t) => t !== index);
+          } else {
+            return subarray;
+          }
+        })
+        .filter((subarray) => {
+          return subarray.length > 0;
+        });
       localStorage.setItem("allProduct", JSON.stringify(state.allProduct));
+    },
+
+    setAllProduct(state, payload) {
+      state.allProduct = payload;
     },
   },
   actions: {
@@ -58,6 +62,9 @@ export const cart = {
     },
     deleteToCart({ commit }, item) {
       commit("deleteToCart", item);
+    },
+    setAllProduct({ commit }, item) {
+      commit("setAllProduct", item);
     },
   },
 };

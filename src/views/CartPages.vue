@@ -9,36 +9,44 @@
           <div class="cart_descr">
             <div class="cart_subtitle">Корзина</div>
             <div class="cart_sub">
-              В вашей корзине находится <span>3</span> товара
+              В вашей корзине находится <span>{{ totalCart }}</span> вида товара
             </div>
           </div>
           <div class="cart_items">
-            <div v-for="(item, i) in productFilter" :key="i" class="cart_item">
-              <div class="cart_img">
-                <img :src="item.img" alt="" />
-              </div>
-              <div class="cart_item_info">
-                <div class="cart_item_title">{{ item.name }}</div>
-                <div class="cart_item_subtitle">{{ item.color }}</div>
-              </div>
-              <div class="cart_item_count">
-                <span>1</span>
-                <div class="cart_item_counters">
-                  <font-awesome-icon icon="fa-solid fa-angle-left" />
+            <TransitionGroup name="list">
+              <div
+                v-for="(item, i) in productFilter"
+                :key="i"
+                class="cart_item"
+              >
+                <div class="cart_img">
+                  <img :src="item.img" alt="" />
                 </div>
-                <div class="cart_item_counters">
-                  <font-awesome-icon icon="fa-solid fa-angle-right" />
+                <div class="cart_item_info">
+                  <div class="cart_item_title">{{ item.name }}</div>
+                  <div class="cart_item_subtitle">{{ item.color }}</div>
+                </div>
+                <div class="cart_item_count">
+                  <span>{{ item.totals }}</span>
+                  <div @click="decreaseTotals(item)" class="cart_item_counters">
+                    <font-awesome-icon icon="fa-solid fa-angle-left" />
+                  </div>
+                  <div @click="increaseTotals(item)" class="cart_item_counters">
+                    <font-awesome-icon icon="fa-solid fa-angle-right" />
+                  </div>
+                </div>
+                <div class="cart_item_price">
+                  {{ parseFloat(item.price) * item.totals + "тг" }}
+                </div>
+                <div @click="deleteToCart(item)" class="cart_item_delete">
+                  <font-awesome-icon icon="fa-solid fa-trash-can" />
                 </div>
               </div>
-              <div class="cart_item_price">{{ item.price }}</div>
-              <div @click="deleteToCart(item)" class="cart_item_delete">
-                <font-awesome-icon icon="fa-solid fa-trash-can" />
-              </div>
-            </div>
+            </TransitionGroup>
           </div>
         </div>
 
-        <form class="cart_info">
+        <form v-if="totalCart > 0" class="cart_info">
           <div class="cart_card">
             <div class="cart_card_title">Card Details</div>
             <div class="cart_card_subtitle">Card type</div>
@@ -80,11 +88,11 @@
 
             <div class="cart_check">
               <div class="cart_check_text">
-                Общая сумма <span>1,672тг</span>
+                Общая сумма <span>{{ totalCartPrice }}тг</span>
               </div>
               <div class="cart_check_btn">
                 <button type="button">
-                  <span>1,672тг</span>
+                  <span>{{ totalCartPrice }}тг</span>
                   <span
                     >Оформить достовку
                     <font-awesome-icon icon="fa-solid fa-arrow-right"
@@ -99,7 +107,7 @@
   </section>
 </template>
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 
 export default {
   name: "CartPages",
@@ -114,12 +122,12 @@ export default {
     totalCart() {
       return this.allProduct.length;
     },
-    totalPrice() {
-      
-    },
-    productId() {
-      const product = this.item.find((item) => item.id == this.id);
-      return product ? product.id : "";
+
+    totalCartPrice() {
+      const flattenedProducts = this.allProduct.flat();
+      return flattenedProducts.reduce((total, item) => {
+        return total + parseFloat(item.price) * item.totals;
+      }, 0);
     },
     productFilter() {
       const filteredProducts = this.allProduct.flat();
@@ -128,7 +136,42 @@ export default {
   },
   methods: {
     ...mapActions("cart", ["deleteToCart", "setAllProduct", "handleDelete"]),
+    increaseTotals(item) {
+      if (item.totals >= 5) {
+        return false;
+      } else {
+        item.totals += 1;
+      }
+      localStorage.setItem("allProduct", JSON.stringify(this.allProduct));
+    },
+    decreaseTotals(item) {
+      if (item.totals <= 1) {
+        return false;
+      } else {
+        item.totals -= 1;
+      }
+      localStorage.setItem("allProduct", JSON.stringify(this.allProduct));
+    },
   },
-  mounted() {},
+  mounted() {
+    if (localStorage.getItem("allProduct")) {
+      const allProduct = JSON.parse(localStorage.getItem("allProduct"));
+      this.setAllProduct(allProduct);
+      console.log(this.totalCartPrice);
+    }
+    this.totalCart;
+  },
 };
 </script>
+
+<style scoped>
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(50px);
+}
+</style>

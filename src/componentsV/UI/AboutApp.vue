@@ -4,8 +4,8 @@
       <div class="about_title">О “Гаджетариуме” в цифрах</div>
       <div class="about_wrapper">
         <div v-for="about in abouts" class="about_item">
-          <div class="about_num">{{about.num}}</div>
-          <div class="about_text">{{about.text}}</div>
+          <div class="about_num">{{ about.num }}</div>
+          <div class="about_text">{{ about.text }}</div>
         </div>
       </div>
     </div>
@@ -24,7 +24,8 @@ export default {
         {
           num: "100+",
           text: "Товаров в каталоге, здесь у меня пока мало",
-          spans: 'просто у меня сейчас нет сервера и я сам сделал имитацию JSON серевера в коде можно посмотреть'
+          spans:
+            "просто у меня сейчас нет сервера и я сам сделал имитацию JSON серевера в коде можно посмотреть",
         },
         {
           num: "4688    ",

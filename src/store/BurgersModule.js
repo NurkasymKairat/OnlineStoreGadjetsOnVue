@@ -17,6 +17,6 @@ export const BurgersModule = {
     },
     closeBurgers(state) {
       state.burgers = false;
-  }
+    },
   },
 };

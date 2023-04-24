@@ -5,7 +5,7 @@
         <font-awesome-icon icon="fa-solid fa-cart-shopping" />
       </router-link>
       <div class="carter_price">
-        4665 тенге.<span>{{ totalCart }}</span>
+        {{ allPriceTotal }} тенге.<span>{{ totalCart }}</span>
       </div>
     </div>
   </div>
@@ -17,6 +17,12 @@ export default {
     ...mapGetters("cart", ["allProduct"]),
     totalCart() {
       return this.allProduct.length;
+    },
+    allPriceTotal() {
+      const flattenedProducts = this.allProduct.flat();
+      return flattenedProducts.reduce((total, item) => {
+        return total + parseFloat(item.price) * item.totals;
+      }, 0);
     },
   },
 };

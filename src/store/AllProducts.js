@@ -1,4 +1,5 @@
 export const AllProducts = {
+  namespaced: true,
   state: {
     items: [
       {
@@ -12,6 +13,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/phones/ip13.png",
         price: "550000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
+        totals: 1,
       },
       {
         id: 2,
@@ -24,6 +26,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/phones/ip11.png",
         price: "300000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
+        totals: 1,
       },
       {
         id: 3,
@@ -36,6 +39,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/phones/ip12.png",
         price: "360000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
+        totals: 1,
       },
 
       {
@@ -49,6 +53,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/phones/ipx.png",
         price: "220000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
+        totals: 1,
       },
       {
         id: 5,
@@ -61,6 +66,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/phones/ip14.png",
         price: "650000тг",
         option: ["Корпус", "Размер", "Цвет", "Батарея", "Экран"],
+        totals: 1,
       },
 
       {
@@ -74,6 +80,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/drones/mv1.png",
         price: "350000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
+        totals: 1,
       },
       {
         id: 7,
@@ -86,6 +93,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/drones/mv2.png",
         price: "540000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
+        totals: 1,
       },
       {
         id: 8,
@@ -98,6 +106,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/drones/mv3.png",
         price: "820000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
+        totals: 1,
       },
       {
         id: 9,
@@ -110,6 +119,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/drones/mvair.png",
         price: "310000тг",
         option: ["Корпус", "Камера", "Цвет", "Время полета", "Вес"],
+        totals: 1,
       },
 
       {
@@ -123,6 +133,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/ipads/ipadair2022.png",
         price: "370000тг",
         option: ["Корпус", "Памят", "Цвет", "Процессор", "Экран"],
+        totals: 1,
       },
       {
         id: 11,
@@ -135,6 +146,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/ipads/ipadpro2022.png",
         price: "720000тг",
         option: ["Корпус", "Памят", "Цвет", "Процессор", "Экран"],
+        totals: 1,
       },
       {
         id: 12,
@@ -147,6 +159,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/ipads/ipadpro2020.png",
         price: "420000тг",
         option: ["Корпус", "Памят", "Цвет", "Процессор", "Экран"],
+        totals: 1,
       },
 
       {
@@ -160,6 +173,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/watches/wh5.png",
         price: "220000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
+        totals: 1,
       },
       {
         id: 14,
@@ -172,6 +186,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/watches/wh7.png",
         price: "250000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
+        totals: 1,
       },
       {
         id: 15,
@@ -184,6 +199,7 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/watches/wh8.png",
         price: "300000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
+        totals: 1,
       },
       {
         id: 16,
@@ -196,10 +212,19 @@ export const AllProducts = {
         img: "/src/assets/img/catalog/watches/whultra.png",
         price: "490000тг",
         option: ["Корпус", "Размер", "Цвет", "Емкость", "Экран"],
+        totals: 1,
       },
     ],
   },
   getters: {
-    items: state => state.items,
-  }
+    items: (state) => state.items,
+  },
+  mutations: {
+    updateTotals(state, { productId, newTotals }) {
+      const product = state.items.find((item) => item.id === productId);
+      if (product) {
+        product.totals = newTotals;
+      }
+    },
+  },
 };

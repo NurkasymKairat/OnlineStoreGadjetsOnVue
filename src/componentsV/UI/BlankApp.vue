@@ -14,7 +14,8 @@
           <div class="blank_info">
             <div class="blank_title">Поступление новых ipad pro</div>
             <div class="blank_subtitle">
-                Повысьте свою <br> производительность с помощью ipad
+              Повысьте свою <br />
+              производительность с помощью ipad
             </div>
           </div>
         </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="catalog">
     <div class="catalog_wrapper">
-
       <div
-        v-for="item in product"
+        v-for="(item, i) in product"
         :style="{ marginRight: styles }"
+        :key="i"
         class="catalog_item"
       >
         <div class="catalog_item_title">{{ item.name }}</div>
@@ -30,12 +30,15 @@
         <div class="catalog_next">
           <div class="catalog_price">{{ item.price }}</div>
           <slot></slot>
-          <router-link v-show="links" :to="`/product/${item.id}`" class="catalog_arrow">
+          <router-link
+            v-show="links"
+            :to="`/product/${item.id}`"
+            class="catalog_arrow"
+          >
             <font-awesome-icon icon="fa-solid fa-arrow-right" />
           </router-link>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -49,13 +52,8 @@ export default {
       type: Boolean,
       default: true,
       required: true,
-    }
+    },
   },
-  data() {
-    return {};
-  },
-  computed: {},
-  methods: {},
 };
 </script>
 <style lang="scss">
@@ -151,7 +149,7 @@ export default {
 .list-move {
   transition: all 0.4s linear;
 }
-.list-enter-active ,
+.list-enter-active,
 .list-leave-active {
   transition: all 0.8s ease;
 }

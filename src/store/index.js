@@ -7,11 +7,11 @@ import { product } from "./product";
 import { cart } from "./cart";
 export default createStore({
   modules: {
-     BurgersModule,
-     SlidesModule,
-     AllProducts,
-     CatalogFilter,
-     product,
-     cart,
-  }
+    BurgersModule,
+    SlidesModule,
+    AllProducts,
+    CatalogFilter,
+    product,
+    cart,
+  },
 });

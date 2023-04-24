@@ -9,11 +9,7 @@
   </div>
 </template>
 <script>
-
-
 export default {
-    name: "FirstPages",
-
+  name: "FirstPages",
 };
 </script>
-
